@@ -13,6 +13,11 @@
 
 > 您可以自定义实例和节点的名称，不过使用时要注意区分和选择。当然，我们推荐使用通用的命名
 
+## 关于uri的解释
+
+系统会调用parse_url解析uri字段, 解析出来的host为mysql主机地址, port为端口号, path为数据库名, query是用户名和数据库以及指定编码等.
+以上述为例, '127.0.0.1'为mysql主机地址, '3306'为端口号, test为数据库名.
+
 ## properties
 
 配置 `config/properties/db.php`
@@ -148,4 +153,5 @@ return [
 ```
 
 > 注意： 新增实例除了要添加配置外，还需新增相关的 pool配置类，pool类，请参照 `app/Pool` 和 `swoft/db` 的test示例
+
 
